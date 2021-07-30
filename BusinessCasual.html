@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        min-height: 100vh;
+        width: 100vw;
+        background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('bg.jpg');
+        display: flex;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    #header {
+        display: flex;
+        flex-direction: column;
+        height: 114px;
+        width: 100%;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        align-items: center;
+        font-size: 2.5rem;
+    }
+
+    .header1 {
+        color: #e6a756 !important;
+        font-size: 3rem;
+        font-weight: 800;
+        font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        margin-bottom: 31px;
+        line-height: 1;
+        text-transform: uppercase;
+        text-align: center;
+        transform: scale(1.07);
+    }
+
+    .header2 {
+        color: #f6e1c5;
+        font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 5rem;
+        font-weight: 100;
+        line-height: 4rem;
+        text-transform: uppercase;
+        transform: scale(1.6);
+    }
+
+    .navbar {
+        width: 100%;
+        background-color: rgba(47, 23, 15, 0.9);
+        padding-top: 24px;
+        padding-bottom: 24px;
+        display: flex;
+        justify-content: center;
+        border: none;
+
+    }
+
+    .navs {
+        width: 100%;
+        margin-top: 8px;
+        margin-bottom: 0;
+        text-align: center;
+        margin-right: 5px;
+
+    }
+
+    ul li {
+        height: 30px;
+        list-style-type: none;
+        display: inline-block;
+        padding-right: 3rem !important;
+        padding-left: 1.5rem !important;
+        line-height: 1.5;
+
+    }
+
+    ul li a {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 800;
+        font-size: 1.5rem;
+        padding: 8px;
+        font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    }
+
+    li a:hover {
+        text-decoration: none;
+        color: rgba(26, 18, 18, 0.7);
+    }
+
+    li>a,
+    li>a:hover,
+    li>a:active,
+    li>a:visited,
+    li>a:focus {
+        text-decoration: none;
+
+    }
+
+    li>a:focus {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    li>a:focus:hover {
+        color: rgba(26, 18, 18, 0.7);
+    }
+
+
+
+    .boxes {
+        width: 100%;
+        height: 400px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .intro {
+        position: relative;
+        width: 550px;
+        z-index: 1;
+        background-color: #f6e1c5;
+        border-radius: 5px;
+        padding: 48px;
+        left: 350px;
+    }
+
+    .introHeading {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 24px;
+        margin-top: 0;
+        font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    }
+
+    .intro>p {
+        line-height: 1.75;
+        text-align: center;
+        font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .heading-upper {
+        line-height: 1.2;
+        font-weight: 800;
+        font-size: 1.5rem;
+    }
+
+    .heading-lower {
+        font-size: 3rem;
+        font-weight: 100;
+        transform: scale(1.3);
+        margin-top: 5px;
+    }
+
+    .btnLink {
+        position: relative;
+        background-color: #e6a756;
+        padding: 24px 32px 24px 32px;
+        border: 1px solid #e6a756;
+        border-radius: 5px;
+        color: #000;
+        top: 53px;
+        left: 33%;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .btnLink:hover {
+        background-color: #ebb267;
+
+    }
+
+    .btnLink,
+    .btnLink:hover,
+    .btnLink:active,
+    .btnLink:visited,
+    .btnLink:focus {
+        text-decoration: none;
+        color: #000;
+    }
+
+    img {
+        width: 882px;
+        height: 528px;
+        position: relative;
+        left: 35%;
+        top: -87%;
+    }
+
+    .info-card {
+        height: 456px;
+        width: 100%;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        background-color: rgba(230, 167, 86, 0.9);
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        height: 296px;
+        width: 964px;
+        padding: 48px;
+        padding-top: 36px;
+        border-style: solid;
+        border-radius: 3px;
+        background-color: #f6e1c5;
+        border-color: #f6e1c5;
+
+        box-shadow:
+
+            0 0 0 5px rgba(230, 167, 86, 0.9),
+            0 0 0 10px rgba(238, 186, 118, 0.9);
+
+
+
+
+    }
+
+    .info-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 24px;
+
+    }
+
+    .card>p {
+        text-align: center;
+        line-height: 1.75;
+        font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 1.6rem;
+    }
+
+    .info-h1 {
+        font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 800;
+        font-size: 1.5rem;
+        transform: scale(1.1)
+    }
+
+    .info-h2 {
+        font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 100;
+        font-size: 3rem;
+        transform: scale(1.5);
+        margin-top: 10px;
+    }
+
+    .footer {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        background-color: rgba(47, 23, 15, 0.9);
+    }
+
+    .footer>p {
+        text-align: center;
+        margin-bottom: 0;
+        color: #f6e1c5;
+        font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 400;
+    }
+
+    i {
+        color: white;
+        padding: 5px;
+        border: 1px solid grey;
+
+    }
+
+    .bar {
+        height: 20px;
+        background-color: rgba(47, 23, 15, 0.9);
+        padding-top: 24px;
+        padding-bottom: 24px;
+        display: none;
+    }
+
+    @media (max-width:768px) {
+        .bar {
+            display: block;
+        }
+
+        .navbar {
+            display: none;
+        }
+
+        #header {
+            display: none;
+        }
+
+        .card {
+            margin: auto;
+            width: 75%;
+            height: 110%;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-header {
+            margin-top: 10px;
+        }
+
+    }
+</style>
+
+<body>
+
+
+    <h1 id="header">
+        <span class="header1">A Free Bootstrap Business Theme</span>
+        <span class="header2">Business Casual</span>
+    </h1>
+    <div class="bar">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div class="navbar">
+
+
+
+        <ul class="navs">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">STORE</a></li>
+        </ul>
+    </div>
+    <div class="boxes">
+        
+        <div class="intro">
+           
+               
+                <h2 class="introHeading">
+                    <span class="heading-upper">FRESH COFFEE</span>
+                    <span class="heading-lower">WORTH DRINKING</span>
+                </h2>
+                <p>Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once
+                    you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee
+                    it!</p>
+                <div class="intro-btn">
+                    <a class="btnLink" href="#">Visit Us Today!</a>
+            </div>
+            
+           
+           
+        </div>
+       
+
+        <img src="intro.jpg" alt="...">
+        
+    </div>
+
+    <div class="info-card">
+
+        <div class="card">
+            <h2 class="info-header">
+                <span class="info-h1">OUR PROMISE</span>
+                <span class="info-h2">TO YOU</span>
+            </h2>
+            <p>When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a
+                welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients.
+                If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright © Your Website 2021</p>
+    </div>
+    <script>
+        $('.bar').click(function () {
+            $(".navbar").slideToggle();
+            $("ul li").css("display", "block");
+        })
+        $(window).resize(function () {
+            if ($(window).width() > 768) {
+                $(".navbar").css("display", "flex").css("flex-direction", "row")
+                $("ul li").css("display", "inline-block");
+            }
+        })
+        $(window).resize(function () {
+            if ($(window).width() < 768) {
+                $(".navbar").css("display", "none")
+            }
+        })
+        $(window).resize(function () {
+            if ($(window).width() < 1000) {
+                $(".card").css("width", ($(window).width() * 3) / 4);
+            }
+            else{
+                $(".card").css("width", "964px");
+            }
+        })
+
+    </script>
+</body>
+
+</html>
